@@ -1,0 +1,149 @@
+* {
+	margin: 0%;
+	padding: 0%;
+	box-sizing: border-box;
+	cursor: none;
+}
+
+/**FONT FACES USED*/
+/*TODO: YOU CAN CHANGE THE FONT IF YOU WANT*/
+@font-face {
+	font-family: Astro;
+	src: url(fonts/ASTRO867.TTF) format("truetype");
+}
+@font-face {
+	font-family: Caoji;
+	src: url(fonts/Caoji20.ttf) format("truetype");
+}
+@font-face {
+	font-family: Junkies;
+	src: url(fonts/Cyberjunkies.ttf) format("truetype");
+}
+
+/**ALL THE COLORS ARE USED AS VARIABLES*/
+:root {
+	--offWhite: #ebebeb;
+	--eerie: #2b2d42;
+	--onyx: #7ba2b9;
+	--dyke: #2a404e;
+}
+body {
+	background: -webkit-linear-gradient(-90deg, var(--onyx) 50%, var(--dyke));
+}
+
+.wrapper {
+	overflow: hidden;
+	width: 100vw;
+	height: 100vh;
+}
+
+.logo {
+	padding-right: 40px;
+	display: flex;
+	align-items: end;
+	justify-content: end;
+	padding-top: 40px;
+	width: 100%;
+}
+.logo img {
+	width: 20%;
+	animation: glitch 3.5s infinite steps(1);
+}
+/**LOGOS GLITCH EFFECT*/
+@keyframes glitch {
+	0%,
+	100% {
+		background-image: url(images/nyx-logo.png);
+		background-size: cover;
+	}
+	92.5% {
+		background-image: url(images/glitch-1.png);
+		background-size: cover;
+		opacity: 1;
+	}
+	95% {
+		background-image: url(images/glitch-2.png);
+		background-size: cover;
+		opacity: 0;
+	}
+	97.5% {
+		background-image: url(images/glitch-3.png);
+		background-size: cover;
+		opacity: 1;
+	}
+}
+
+.nxyName {
+	padding-top: 122px;
+	text-align: center;
+}
+.nxyName h1 {
+	font-family: Junkies;
+	font-size: 10rem;
+	rotate: -10deg;
+	letter-spacing: 7px;
+	color: var(--offWhite);
+}
+
+/*!WON'T RECOMMEND TO CHANGE ANYTHING HERE*/
+.circle {
+	transform: translateX(500px) translateY(-300px);
+}
+.circle {
+	font-family: Caoji;
+	position: relative;
+	height: 600px; /*TODO: IF WANT TO CHANGE, JUST CHANGE HEIGHT & WIDTH*/
+	width: 600px; /*!MAKE SURE BOTH ARE SAME*/
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.text {
+	height: 100%;
+	width: 100%;
+	font-size: 3rem;
+	color: var(--eerie);
+	position: absolute;
+	animation: rotate 15s linear infinite;
+}
+.text span {
+	position: absolute;
+	left: 50%;
+	font-size: 3rem;
+	transform-origin: 0 300px; /*TODO: HALF THE HEIGHT*/
+	/*!(if height is 300px | transform-origin will be 0 150px)*/
+}
+/**ROTATION ANIMATION OF THE TEXT*/
+@keyframes rotate {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.infoBox {
+	position: absolute;
+	transform: translateY(-400px);
+	width: 480px;
+	line-height: 1.4;
+	padding-left: 60px;
+	margin-bottom: 30px;
+}
+.infoBox p {
+	color: var(--onyx);
+	letter-spacing: 3.5px;
+	font-size: 0.5rem;
+	font-family: Astro;
+}
+
+.nxyMain {
+	position: fixed;
+	overflow: hidden;
+	height: 600px;
+	width: 300px;
+	transform: translateY(-849px) translateX(650px);
+}
+.nxyMain img {
+	height: 100%;
+	width: 100%;
+}
